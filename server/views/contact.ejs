@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+    <title> Contact | destination photographers</title>
+    <link rel="icon" type="image/x-icon"  href="/images/fav.png">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Igor&Ana" />
+    <meta name="keywords" content="Fotografisanje, vjencanje, slikanje vjencanja" />
+    <meta name="author" content="Igor&Ana" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link href="https://fonts.googleapis.com/css?family=Work+Sans" rel="stylesheet">
+
+    <link rel="stylesheet" href="/front/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/front/css/open-iconic-bootstrap.min.css">
+    
+    <link rel="stylesheet" href="/front/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="/front/css/owl.theme.default.min.css">
+
+    <link rel="stylesheet" href="/front/css/icomoon.css">
+    <link rel="stylesheet" href="/front/css/animate.css">
+    <link rel="stylesheet" href="/front/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200&display=swap" rel="stylesheet">
+
+  </head>
+
+<%- include('header')  %> 
+
+
+    <main role="main"  class="probootstrap-main js-probootstrap-main">
+      <div class="probootstrap-bar">
+        <a href="#" class="probootstrap-toggle js-probootstrap-toggle"><span class="oi oi-menu"></span></a>
+        <div class="probootstrap-main-site-logo"><a href="/contact">Contact</a></a></div>
+      </div>
+      <div class="container-fluidx">
+        <div class="row justify-content-center">
+          <div id="mob1" class="">
+
+            <div class="row">
+              <div id="mob2" class="">
+                <script>
+                  var width = window.innerWidth
+                  var mob1 = document.getElementById('mob1')
+                  var mob2 = document.getElementById('mob2')
+                  console.log(width)
+                  if(width <= 650) {
+                    mob1.style.marginTop = "50px"
+                    mob1.classList.add('col-xl-8')
+                    mob1.classList.add('col-lg-12')
+
+                    mob2.classList.add('col-xl-8')
+                    mob2.classList.add('col-lg-12')
+                    mob2.classList.add('mx-auto')
+                    
+                  }
+                </script>
+                <style>
+        
+                </style>
+               <div class="sizes">
+                
+                <div class="mar">
+                <h1 class="mb-3">Don't be shy. Get in touch!</h1>
+
+                <form action="/message" method="post" class="probootstrap-form mb-5">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label for="fname">First Name</label>
+                        <input type="text" class="form-control" id="fname" name="fname" required>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label for="lname">Last Name</label>
+                        <input type="text" class="form-control" id="lname" name="lname" required>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" class="form-control" id="email" name="email" required>
+                  </div>
+                  <div class="form-group mb-4">
+                    <label for="message">Message</label>
+                    <textarea cols="30" rows="10" class="form-control" id="message" name="message" required></textarea>
+                  </div>
+                  <div class="form-group">
+                    <input type="submit" class="btn btn-primary" id="submit" name="submit" value="Send Message">
+                  </div>
+                </form>
+              </div>
+              <div>
+                <p style="margin-left: 60px; margin-top: 60px;"><a href="tel:"><strong>Phone number:</strong>067 067 067</a></p>
+                <p style="margin-left: 60px;"><a href="mailto:"><strong>Mail:</strong>anaigor@gmail.com</a></p>
+                <div class="slika mar" >
+                </div>
+              </div>
+              
+
+              </div>
+
+
+              </div>
+            </div>
+            
+          </div>
+        </div>
+        <!-- END row -->
+
+        
+
+            
+          </div>
+        </section>
+        <!-- END section -->
+
+      </div>
+
+<%- include('footer') %> 
+     

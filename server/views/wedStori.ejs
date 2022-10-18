@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+    <title>Wedding Stories | destination photographers</title>
+    <link rel="icon" type="image/x-icon" href="/images/fav.png">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Igor&Ana" />
+    <meta name="keywords" content="Fotografisanje, vjencanje, slikanje vjencanja" />
+    <meta name="author" content="Igor&Ana" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link href="https://fonts.googleapis.com/css?family=Work+Sans" rel="stylesheet">
+
+    <link rel="stylesheet" href="/front/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/front/css/open-iconic-bootstrap.min.css">
+    
+    <link rel="stylesheet" href="/front/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="/front/css/owl.theme.default.min.css">
+
+    <link rel="stylesheet" href="/front/css/icomoon.css">
+    <link rel="stylesheet" href="/front/css/animate.css">
+    <link rel="stylesheet" href="/front/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200&display=swap" rel="stylesheet">
+
+  </head>
+
+<%- include('header')  %> 
+
+
+    <main role="main" class="probootstrap-main js-probootstrap-main">
+      <div class="probootstrap-bar">
+        <a href="#" class="probootstrap-toggle js-probootstrap-toggle"><span class="oi oi-menu"></span></a>
+        <div class="probootstrap-main-site-logo" style="width: 300px;"><a href="/contact">Wedding stories</a></a></div>
+      </div>
+      <div class="container-fluid CEN">
+      <div class="cenDiv" style="display: block; text-align:center; ">
+        <!-- END row -->
+        <style>
+         
+        </style>
+    
+  
+     <style>
+      .wedStori{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+      }
+      .wedStori a{
+        color: white;
+        border: 1px solid white;
+        border-radius: 14px;
+        padding: 6px 15px;
+        background: rgba(0, 0, 0, 0.523);
+      }
+      .wedStori a:hover{
+        color: red;
+        
+      }
+     </style>
+         <% wedStories.forEach(stori=> { %>
+          <a href="/wedd-stories/<%= stori._id %> ">
+          <div class="wedStori" style="background-image:linear-gradient(rgba(0, 0, 0, 0.5),
+        rgba(0, 0, 0, 0.594)), url('/<%= stori.image %>') ;"> <h2 style="color: white;"> <%= stori.name %></h2></div>
+         </a>
+         <% }) %> 
+    
+        <!-- END section -->
+      </div>
+    </div>
+
+<%- include('footer') %> 
+     

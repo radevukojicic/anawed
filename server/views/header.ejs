@@ -1,0 +1,267 @@
+
+  <body>
+
+    <% if(q != "naslovna" && q != "birthdays" && q != "weddings"  && q != "social"   && q != "travel"  ) { %> 
+  <style>
+
+body {
+    animation: fadeInAnimation ease 1s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+  
+@keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+     }
+}
+
+  </style>
+  <% } %> 
+    <header id="myHeader">
+      <div class="log" style=" margin-top: -15px; width: 180px; text-align: center;">
+      <a href="/" style="width: 160px; margin-top: 20px;  font-size: 28px ; color: black;" >IGOR&ANA 
+      <span style="position: absolute;font-size: 14px; transform: translate(-150px, 34px);">PHOTOGRAPHY</span>
+    </a>
+    </div>
+      <nav>
+        <a   href="/"><p>Home</p><div class="bot botHome <% if(q=="naslovna") { %> <%= "act"  %>   <% } %> "></div></a>
+        <a href="#"> <p>Portfolio 
+         
+
+        </p> <div id="LINE" class="bot botPort  <% if(q=="travel" || q=="social" || q=="children" || q=="weddings")  { %> <%= "act"  %>   <% } %> "></div> </a>
+        <style>
+          .im{
+            margin-right: 15px;
+            margin-left: -10px;
+            margin-bottom: 3px;
+          }
+          .drop-do{
+            overflow: hidden;
+            height: 0px;
+            position: absolute;
+            margin-top: 33px;
+            margin-left: 65px;
+            background-color: white;
+            list-style: none;
+            transition: 0.5s ease-in-out;
+          }
+          .drop-do li{
+            visibility: hidden;
+            margin-top: 3px;
+            margin-left: 9px;
+            margin-right:9px;
+            opacity: 0;
+            transition: 1s ease-in-out;
+          }
+        </style>
+        <a href="/wedd-stories"> <p>Wedding stories</p> <div class="bot botWed <% if(q=="wedd-stories") { %> <%= "act"  %>   <% } %> "></div></a>
+        <a href="/contact"> <p> Contact</p><div class="bot botCon <% if(q=="contact") { %> <%= "act"  %>   <% } %> "></div></a>
+        <style>
+          header nav a{
+            color: rgba(10, 10, 10, 0.912);
+            font-weight: bolder;
+          }
+          header nav a p{
+            margin-bottom: 4px;
+          }
+       
+          .bot{
+            width: 0px;
+            height: 1px;
+            background-color: rgb(157, 157, 157);
+            
+            transition: 0.3s ease-in-out;
+
+            
+          }
+          .hov{
+            width:50%;
+            transition: 0.3s ease-in-out;
+          }
+          header nav{
+            display: flex;
+            flex-direction: row;
+          }
+          .act{
+            height: 1px;
+            width: 100%;
+            background-color: rgb(157, 157, 157);
+          
+          }
+          .actd{
+            height: 160px;
+            padding: 10px;
+            border: 1px solid black;
+            
+          }
+        </style>
+         <div class="drop-do">
+          <li> <a href="/?query=weddings"> Weddings</a> </li>
+          <li><a href="/?query=birthdays">Birthdays</a> </li>
+          <li><a href="/?query=social">Social media</a> </li>
+          <li><a href="/?query=travel">Travel</a> </li>
+        </div> 
+      </nav>
+     
+      <script>
+        let ln = document.querySelector('.botHome')
+        let lnP = document.querySelector('.botPort')
+        let lnW = document.querySelector('.botWed')
+        let lnC = document.querySelector('.botCon')
+        let cl = document.querySelectorAll('header nav a')
+
+        let drop = document.querySelector('.drop-do')
+        let dropLink = document.querySelectorAll('.drop-do li')
+
+        console.log(ln)
+      
+           cl[0].addEventListener('mouseover', ()=>{
+               ln.classList.add('hov')
+           })
+           cl[1].addEventListener('mouseover', ()=>{
+               lnP.classList.add('hov')
+               drop.classList.add('actd')
+               dropLink.forEach(lin => {
+                lin.style.opacity = '1'
+                lin.style.visibility = 'visible'
+               })
+
+           })
+           drop.addEventListener('mouseover', ()=>{
+            lnP.classList.add('hov')
+
+            drop.classList.add('actd')
+
+            dropLink.forEach(lin => {
+                lin.style.opacity = '1'
+                lin.style.visibility = 'visible'
+
+               })
+            })
+           cl[2].addEventListener('mouseover', ()=>{
+               lnW.classList.add('hov')
+           })
+           cl[3].addEventListener('mouseover', ()=>{
+               lnC.classList.add('hov')
+           })
+
+           cl[0].addEventListener('mouseout', ()=>{
+               ln.classList.remove('hov')
+           })
+           cl[1].addEventListener('mouseout', ()=>{
+               lnP.classList.remove('hov')
+               drop.classList.remove('actd')
+
+               dropLink.forEach(lin => {
+
+                lin.style.opacity = '0'
+                lin.style.visibility = 'hidden'
+
+               })
+
+           })
+           drop.addEventListener('mouseout', ()=>{
+            lnP.classList.remove('hov')
+
+               lnP.classList.remove('hov')
+               drop.classList.remove('actd')
+
+              //  dropLink.forEach(lin => {
+              //   lin.style.opacity = '0'
+              //   lin.style.visibility = 'hidden'
+
+              //  })
+               for (let i = 0; i < dropLink.length; i++) {
+                const element = dropLink[i];
+                element.style.opacity = '0'
+                element.style.visibility = 'hidden'
+               
+
+                
+               }
+
+           })
+           cl[2].addEventListener('mouseout', ()=>{
+               lnW.classList.remove('hov')
+           })
+           cl[3].addEventListener('mouseout', ()=>{
+               lnC.classList.remove('hov')
+           })
+       
+     
+        
+      </script>
+      
+
+    </header>
+<div id="cot" class="cot"></div>
+    <script>
+      window.onscroll = function() {myFunction()};
+      
+      var header = document.getElementById("myHeader");
+      var cot = document.getElementById("cot");
+      var sticky = cot.offsetHeight;
+      
+      function myFunction() {
+      
+      }
+      </script>
+    <div class="content"></div>
+    <aside  class="probootstrap-aside js-probootstrap-aside">
+      <a href="#" class="probootstrap-close-menu js-probootstrap-close-menu d-md-none"><span class="oi oi-arrow-left">  <!-- close --></span> </a>
+      <div class="probootstrap-site-logo probootstrap-animate" data-animate-effect="fadeInLeft">
+        
+        <a href="/" style="color: black;" class="mb-2 d-block probootstrap-logo">IGOR&ANA</a>
+        <!-- <p class="mb-0">Igor&IAna</p> -->
+      </div>
+      <div class="probootstrap-overflow">
+        <nav class="probootstrap-nav">
+          <ul>
+            <li class="probootstrap-animate <% if(q=="naslovna") { %> <%= "active"  %>   <% } %> " data-animate-effect="fadeInLeft"><a href="/">Home</a></li>
+           <div id="over">
+            <li id="port"  class="probootstrap-animate <% if(q=="travel" || q=="social" || q=="children" || q=="weddings" || q=="birthdays")  { %> <%= "active"  %>   <% } %> " data-animate-effect="fadeInLeft"  ><a href="#">Portfolio  </a></li>
+            <div class="drp  <% if(q=="travel" || q=="social" || q=="children")  { %> <%= "dis"  %>   <% } %> "  id="drp" style="margin-left: 20px;  ">
+              <li class="probootstrap-animate <% if(q=="weddings") { %> <%= "active"  %>    <% } %> " data-animate-effect="fadeInLeft"><a href="/?query=weddings">Weddings</a></li>
+            
+              <li class="probootstrap-animate <% if(q=="social") { %> <%= "active"  %>   <% } %>" data-animate-effect="fadeInLeft"><a href="/?query=social">Social Media</a></li>
+              <li class="probootstrap-animate <% if(q=="travel") { %> <%= "active"  %>   <% } %>   " data-animate-effect="fadeInLeft"><a href="/?query=travel">Travel</a></li>
+              <li class="probootstrap-animate <% if(q=="birthdays") { %> <%= "active"  %>   <% } %>   " data-animate-effect="fadeInLeft"><a href="/?query=birthdays">Birthdays</a></li>
+            </div>
+          </div>
+       
+            <script>
+               let port = document.getElementById('port')
+               let ar = document.getElementById('drp')
+               port.addEventListener('click', ()=> {
+                for(var i = 0; i < 1; i++) {
+    (function(index) {
+        setTimeout(function() { }, index*1000);
+    })(i);
+}
+                ar.classList.toggle('dis')
+               })
+             
+            </script>
+
+            <li class="probootstrap-animate <% if(q=="wedd-stories") { %> <%= "active"  %>   <% } %>  " data-animate-effect="fadeInLeft"><a href="/wedd-stories">Wedding stories</a></li>
+            <li class="probootstrap-animate <% if(q=="contact") { %> <%= "active"  %>   <% } %>  " data-animate-effect="fadeInLeft"><a href="/contact">Contact</a></li>
+          </ul>
+        </nav>
+        <footer class="probootstrap-aside-footer probootstrap-animate" data-animate-effect="fadeInLeft">
+          <ul class="list-unstyled d-flex probootstrap-aside-social">
+            <!-- <li><a href="#" class="p-2"><span class="icon-twitter"></span></a></li> -->
+            <li><a href="#" class="p-2"><span class="icon-instagram"></span></a></li>
+            <li><a href="#" class="p-2"><span class="icon-facebook"></span></a></li>
+            
+
+          </ul>
+          <p>&copy; 2022 Igor&IAna. <br> All Rights Reserved. <br><!-- Designed by <a href="https://vukojicicdev.me" target="_blank">vukojicicdev.com</a> --></p>
+         
+        </footer>
+        
+      </div>
+    </aside>
