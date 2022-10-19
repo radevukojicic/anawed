@@ -39,11 +39,11 @@ require('./router/api')(app)
 
 //Handle production
 
-if(process.env.NODE_ENV === 'production'){
-    app.use(express.static(__dirname+ '/public/'))
-    //Handle SPA
-    app.get(/.*/, (req, res) => res.sendFile(__dirname+"/public/index.html"))
-}
+// if(process.env.NODE_ENV === 'production'){
+//     app.use(express.static(__dirname+ '/public/'))
+//     //Handle SPA
+//     app.get(/.*/, (req, res) => res.sendFile(__dirname+"/public/index.html"))
+// }
 
 //Connect to port and start server
 const PORT = process.env.PORT || 3000;
